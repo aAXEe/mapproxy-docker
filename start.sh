@@ -13,5 +13,6 @@ then
 fi
 cd /mapproxy
 su $USER_NAME -c "mapproxy-util create -t wsgi-app -f mapproxy.yaml /mapproxy/app.py"
-su $USER_NAME -c "uwsgi --ini /uwsgi.conf"
+#su $USER_NAME -c "spawning app.application --thread=8 --processes=4 --port=8080"
+spawning app.application --thread=8 --processes=4 --port=8080
 #su $USER_NAME -c "/venv/bin/mapproxy-util serve-develop -b 0.0.0.0:8080 mapproxy.yaml"
