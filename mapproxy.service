@@ -9,7 +9,7 @@ Restart=always
 KillMode=control-group
 ExecStartPre=-/usr/bin/docker rm mapproxy-web
 ExecStart=/usr/bin/docker run --name=mapproxy-web --detach=false --cpu-shares=512 \
-    --memory=128M --publish=127.0.0.1::80 --rm=true \
+    --memory=128M --publish=127.0.0.1::8080 --rm=true \
     --env=VIRTUAL_HOST=mapproxy.* \
     --hostname=mapproxy-web \
     --cap-drop=NET_RAW  \
